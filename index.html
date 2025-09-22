@@ -1,0 +1,147 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Louiegi — Professional Web Designer & IT Expert</title>
+  <style>
+    :root{--accent:#2563eb;--dark:#0f172a;--muted:#6b7280}
+    *{box-sizing:border-box}
+    body{font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; margin:0; color:var(--dark); background:#f8fafc}
+    .container{max-width:1080px;margin:40px auto;padding:24px}
+    header{display:flex;align-items:center;gap:20px;flex-wrap:wrap}
+    .avatar{width:100px;height:100px;border-radius:16px;overflow:hidden;box-shadow:0 6px 16px rgba(0,0,0,0.1)}
+    .avatar img{width:100%;height:100%;object-fit:cover}
+    h1{margin:0;font-size:26px}
+    p.lead{color:var(--muted);margin:6px 0 18px;font-size:16px}
+    .grid{display:grid;grid-template-columns:1fr 360px;gap:28px}
+    .card{background:white;padding:20px;border-radius:14px;box-shadow:0 6px 20px rgba(15,23,42,0.06)}
+    .services{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px}
+    .service{background:#eef2ff;padding:10px 14px;border-radius:8px;font-size:14px;color:var(--dark);font-weight:500}
+    .portfolio{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:12px}
+    .proj{background:#f9fafb;padding:14px;border-radius:10px;border:1px solid #e6eef0}
+    label{display:block;font-weight:600;margin-bottom:6px}
+    input[type="text"],input[type="email"],textarea,input[type="tel"],select{width:100%;padding:10px;border-radius:8px;border:1px solid #e6eef0;background:transparent}
+    button.cta{background:var(--accent);color:white;padding:10px 16px;border-radius:10px;border:0;cursor:pointer;font-weight:700}
+    small.muted{color:var(--muted)}
+    footer{margin-top:40px;text-align:center;color:var(--muted);font-size:14px}
+    @media(max-width:880px){.grid{grid-template-columns:1fr}.portfolio{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="avatar"><img src="s1.png" alt="Louiegi profile photo"></div>
+      <div>
+        <h1>Louiegi — Professional Web Designer & IT Expert</h1>
+        <p class="lead">I create high-quality websites for businesses, professionals, and individuals — from portfolio sites to fully functional business websites and beyond.</p>
+      </div>
+    </header>
+
+    <main class="grid" role="main">
+      <section>
+        <div class="card">
+          <h2>What I Offer</h2>
+          <p class="muted">I design and develop websites tailored to your goals. Whether you need a sleek portfolio, a corporate business site, or a custom digital solution — I can build it for you.</p>
+          <div class="services">
+            <div class="service">Business Websites</div>
+            <div class="service">Portfolio Websites</div>
+            <div class="service">E-Commerce</div>
+            <div class="service">Custom Web Apps</div>
+            <div class="service">Responsive Design</div>
+            <div class="service">Basic SEO</div>
+            <div class="service">Ongoing IT Support</div>
+          </div>
+
+          <h3 style="margin-top:20px">Featured Projects</h3>
+          <div class="portfolio">
+            <div class="proj">
+              <strong>Creative Portfolio</strong>
+              <p class="muted">Clean and modern portfolio website for a creative professional.</p>
+            </div>
+            <div class="proj">
+              <strong>Business Website</strong>
+              <p class="muted">Corporate landing page with services and contact form.</p>
+            </div>
+            <div class="proj">
+              <strong>E-Commerce Store</strong>
+              <p class="muted">Functional shop with product listing and checkout system.</p>
+            </div>
+            <div class="proj">
+              <strong>Custom Web App</strong>
+              <p class="muted">Tailored online tool built for a client’s unique workflow.</p>
+            </div>
+          </div>
+        </div>
+
+        <div style="height:16px"></div>
+
+        <div class="card">
+          <h3>Pricing</h3>
+          <p class="muted">Packages starting at: Basic — $50 | Standard — $120 | Premium — $250+</p>
+          <p style="margin-top:6px">Custom pricing available depending on complexity and features required.</p>
+        </div>
+      </section>
+
+      <aside>
+        <div class="card">
+          <h2>Request a Website</h2>
+          <p class="muted">Fill out the form and I’ll reach out within 48 hours to discuss your project.</p>
+
+          <form id="clientForm" method="POST" action="FORM_ENDPOINT">
+            <label for="name">Full Name</label>
+            <input id="name" name="name" type="text" placeholder="Your full name" required>
+
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" placeholder="you@example.com" required>
+
+            <label for="phone">Phone (optional)</label>
+            <input id="phone" name="phone" type="tel" placeholder="+63 9xx xxx xxxx">
+
+            <label for="budget">Estimated Budget</label>
+            <select id="budget" name="budget">
+              <option value="<50">Under $50</option>
+              <option value="50-150">$50–$150</option>
+              <option value="150+">$150 and up</option>
+            </select>
+
+            <label for="details">Project Details</label>
+            <textarea id="details" name="details" rows="5" placeholder="Tell me about your project (goal, pages, features)" required></textarea>
+
+            <div style="margin-top:10px;display:flex;gap:8px;align-items:center">
+              <input id="consent" name="consent" type="checkbox" required>
+              <label for="consent" style="font-weight:400">I consent to be contacted regarding this project.</label>
+            </div>
+
+            <div style="margin-top:12px;display:flex;gap:8px">
+              <button class="cta" type="submit">Send Request</button>
+              <button class="cta" type="button" style="background:#e2e8f0;color:var(--dark)" onclick="resetForm()">Reset</button>
+            </div>
+          </form>
+
+          <script>
+            function resetForm(){document.getElementById('clientForm').reset()}
+          </script>
+        </div>
+
+        <div style="height:14px"></div>
+
+        <div class="card">
+          <h3>Contact</h3>
+          <p class="muted">Email: <strong>abellanabiz@gmail.com</strong></p>
+          <p class="muted">Phone: <strong>09919958389</strong></p>
+          <p class="muted">Facebook: <strong>louiegi adtoon</strong></p>
+          <p class="muted">Facebook Page: <strong>Vivas Web</strong></p>
+          <p class="muted">Direct message me on social platforms for faster response.</p>
+        </div>
+      </aside>
+    </main>
+
+    <footer>
+      © <span id="year"></span> Louiegi — Professional Web Design & IT Solutions
+    </footer>
+  </div>
+
+  <script>document.getElementById('year').textContent=new Date().getFullYear()</script>
+</body>
+</html>
